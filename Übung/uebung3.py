@@ -1,7 +1,6 @@
 import random
 
-# Übung 1.1 testetetststs
-
+# Übung 1.1 
 
 
 
