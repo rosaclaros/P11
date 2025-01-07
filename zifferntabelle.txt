@@ -1,0 +1,15 @@
+Ziffer	Wort	SAMPA	IPA
+0	null	n U l	n ʊ l
+1	eins	? aI n s	aɪ n s
+2	zwei	ts v aI	ts v aɪ
+2	zwo	ts v o:	ts v oː
+3	drei	d r aI	d ʁ aɪ
+4	vier	f i:6	f iːɐ
+5	fünf	f Y n f	f Y n f
+6	sechs	z E k s	z ɛ k s
+7	sieben	z i: b @ n	z iː b ə n
+8	acht	? a x t	ʔ a χ t
+9	neun	n OY n	n ɔɪ n
+10	zehn	ts e: n	ts eː n
+11	elf	? E l f	ʔ ɛ l f
+12	zwölf	ts v 9 l f	ts v œ l f
