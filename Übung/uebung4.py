@@ -4,34 +4,39 @@ import os.path
 
 #Übung 1: Urlaubsfieber
 
+
+
+
 #Welche Daten liegen in diesem Ordner? Bestimme, ob es sich dabei um Files oder Ordner handelt.
 
-def find_items():
-    aktuell = os.getcwd() #Returns the current working directory
-    ziel = input(f'Du bist aktuell im Verzeichnis {aktuell}. In welches Verzeichnis möchtest du gehen? ') or aktuell
+def file_or_folder():
+    aktuell = os.getcwd()
+    ziel = input(f"Du bist aktuell im Verzeichnis {aktuell}. In welches Verzeichnis moechtest du gehen?") or aktuell
     pfad = os.path.realpath(ziel)
-    
-    if os.path.exists(pfad):
-        if os.path.isdir(pfad):
-            dateien = os.listdir(pfad)
-            
-            counter = 0
-            counter_files = 0
 
+    if os.path.exists(pfad):        #checks if path exists
+        if os.path.isdir(pfad):             
+            dateien = os.listdir(pfad)
+            counter_files = 0
+            counter_folders = 0
             for item in dateien:
-                full_path = os.paSSSth.join(pfad, item)
-                if os.path.isfile(full_path):  # Check if it's a file
-                    counter += 1
-                    print(f'{counter}. Datei: {item}')
-                elif os.path.isdir(full_path):  # Check if it's a folder
+
+                pfad_und_datei = os.path.join(pfad, item)   #Path to file within file
+                if os.path.isfile(pfad_und_datei):          #checks if it's a file
                     counter_files += 1
-                    print(f'{counter_files}. Ordner: {item}')
-                    
+                elif os.path.isdir(pfad_und_datei):         #checks if it's folder
+                    counter_folders += 1
+                else:
+                    print(f"Weiss nicht was das ist...")
+
         elif os.path.isfile(pfad):
-            print(f'{pfad} ist eine Datei, kein Verzeichnis.')
+            print(f'Es ist ein File kein Ordner.')
+
+        else:
+            print(f"Weiss nicht was das ist...")
     else:
-        print(f'Fehler: {pfad} ist kein gültiger Pfad.')
-        
+        print(f"Pfad existier nicht.")            
+
 
 #Welche Dateien liegen im Unterordner Reservierungsbestätigungen?
 
@@ -83,6 +88,7 @@ def getTiersAsTexts(directory, filename):
     
     full_path = os.path.join(directory, filename)
 
+
     if not os.path.exists(full_path):
         raise FileNotFoundError(f"The file {full_path} does not exist.")
 
@@ -101,8 +107,9 @@ def getTiersAsTexts(directory, filename):
 import wave
 
 directory = r"C:\Users\rosac\OneDrive\Desktop\P11\audiodateien\audiodateien"
-full_path = os.path.join(directory, filename)
 filename = 'Test0001IT_S0.wav'
+full_path = os.path.join(directory, filename)
+
 
 with wave.open(full_path, 'rb') as audiofile:
     params = audiofile.getparams()
