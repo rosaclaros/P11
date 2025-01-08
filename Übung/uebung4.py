@@ -15,20 +15,24 @@ def file_or_folder():
     pfad = os.path.realpath(ziel)
 
     if os.path.exists(pfad):        #checks if path exists
-        if os.path.isdir(pfad):             
-            dateien = os.listdir(pfad)
+        if os.path.isdir(pfad):           #check if path is a folder  
+            dateien = os.listdir(pfad)      # saves all the files in the folder in a variable
             counter_files = 0
             counter_folders = 0
-            for item in dateien:
+            for item in dateien:               
 
                 pfad_und_datei = os.path.join(pfad, item)   #Path to file within file
                 if os.path.isfile(pfad_und_datei):          #checks if it's a file
                     counter_files += 1
+                    print(f"{item} ist eine Datei.")
                 elif os.path.isdir(pfad_und_datei):         #checks if it's folder
                     counter_folders += 1
+                    print(f"{item} ist ein Ordner.")
                 else:
                     print(f"Weiss nicht was das ist...")
-
+                    
+            print(f"Ordner enthält {counter_files} Dateien und {counter_folders} Ordner")
+            
         elif os.path.isfile(pfad):
             print(f'Es ist ein File kein Ordner.')
 
@@ -47,8 +51,45 @@ def ordner_erfragen():
     if os.path.exists(pfad):
         if os.path.isdir(pfad):
             return pfad
-    return None
+    else:    
+        return None
 
+# find all wav files without including full path
+def verzeichnis_erfragen():
+    aktuell = os.getcwd()
+    root = aktuell
+    for aktuell, verzeichnisse, dateien in os.walk(root):
+        for datei in dateien:
+            if datei.endswith('.wav'):
+                
+                dateipfad = os.path.join(aktuell, datei)
+               
+                print(f'{dateipfad}')
+                
+#??
+
+def suchen_extension(root, ext):
+    gefunden = []
+    for pfad, verzeichnis, dateien in os.walk(root):
+        for datei in dateien:
+            if datei.endswith(ext):
+                dateipfad = os.path.join(pfad, datei)
+                gefunden.append(dateipfad)
+    # Rückgabe der Ergebnis
+    return gefunden
+
+#alternativ
+
+def suchen_extension(root, ext):
+    gefunden = []
+    for pfad, verzeichnis, dateien in os.walk(root):
+        for datei in dateien:
+            _, dateitext = os.path.splitext(datei)
+            if ext == dateitext:
+                dateipfad = os.path.join(pfad, datei)
+                gefunden.append(dateipfad)
+    # Rückgabe der Ergebnis
+    return gefunden
 
 #Welche Dateien liegen im Unterordner Reservierungsbestätigungen?
     
@@ -106,7 +147,7 @@ def getTiersAsTexts(directory, filename):
 
 import wave
 
-directory = r"C:\Users\rosac\OneDrive\Desktop\P11\audiodateien\audiodateien"
+directory = r"C:\Users\rosac\OneDrive\Desktop\P11_Python\Übung\audiodateien"
 filename = 'Test0001IT_S0.wav'
 full_path = os.path.join(directory, filename)
 
