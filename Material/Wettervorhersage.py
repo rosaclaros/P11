@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+
 maxTemp = [22, 26, 20, 23, 23, 25, 27, 27]
 minTemp = [13, 11, 16, 14, 16, 15, 15, 15]
 sonnenstunden = [7, 16, 3, 7, 6, 13, 7, 8]
