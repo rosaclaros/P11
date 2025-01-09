@@ -18,4 +18,7 @@ vorhersage = pd.DataFrame({
 # Run through interactive Window to see plot
 vorhersage.plot(x = "Datum", y = ["Maximal", "Minimal"])
 
+vorhersage.plot(x = "Datum", y = ["Maximal", "Minimal", "Sonne"])
+
+
 
