@@ -16,17 +16,17 @@ print(kassenzettel)
 print("----------------------")
 print(kassenzettel.shape)  # Tuple (number of rows, number of columns)
 print("----------------------")
-print(kassenzettel[['Artikel', 'Preis']])  # Returns both full columns
+print(kassenzettel[['Artikel', 'Preis']])  # Returns both full columns (DATAFRAME)
 print("-----------------------")
-print(kassenzettel[['Preis', 'Artikel']])  # Returns both full columns
+print(kassenzettel[['Preis', 'Artikel']])  # Returns both full columns (DATAFRAME)
 print("-----------------------")
 print(kassenzettel['Artikel'][0])  # First value of 'Artikel' column
 print("-----------------------")
-print(kassenzettel['Artikel'][0:3])  # First three values of 'Artikel' column
+print(kassenzettel['Artikel'][0:3])  # Dataframe: First three values of 'Artikel' column
 print("-----------------------")
 print(kassenzettel.iloc[0:2, 0:3])  # Access rows and columns by index
 print("------------------------")
-print(kassenzettel[kassenzettel['Preis'] < 1.0])  # All rows where 'Preis' < 1.0
+print(kassenzettel[kassenzettel['Preis'] < 1.0])  # All rows where 'Preis' < 1.0 (DATAFRAME)
 print("------------------------")
 print(kassenzettel[(kassenzettel['Preis'] < 1.0) &
                    (kassenzettel['Gewicht'] < 1000)])
@@ -40,8 +40,8 @@ print("---------------------------")
 
 # Add a new row to the DataFrame
 zeile = pd.DataFrame(
-    columns=kassenzettel.columns,
-    data=[["Äpfel", 1500, 4.99, "B", "Obst"]]
+    columns=kassenzettel.columns,  # columns ist eine reservierte Variable
+    data=[["Äpfel", 1500, 4.99, "B", "Obst"]] # data ist eine reservierte Variable
 )
 
 kassenzettel = pd.concat(
