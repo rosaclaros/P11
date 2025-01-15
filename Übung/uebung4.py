@@ -154,8 +154,9 @@ full_path = os.path.join(directory, filename)
 
 with wave.open(full_path, 'rb') as audiofile:
     params = audiofile.getparams()
-    print(params[2])
-    print(params.framerate)
+    print(params[2])  # return sampling frequency
+    print(params.framerate) # return sampling frequency
+    
     
 
 def playtime(audiofile):
