@@ -2,7 +2,7 @@ import textgrids
 import wave
 import os
 
-grid = textgrids.TextGrid('./NA03_SR_1_0007.TextGrid')
+grid = textgrids.TextGrid('./01_atteindre_sombre.TextGrid')
 tiernames = grid.keys()
 for tier in tiernames:
     print(f'{tier}')

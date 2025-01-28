@@ -30,6 +30,7 @@ def extrahiereFragement(quelldatei, zieldatei, von, bis):
 #dateiname = './NA03_SR_1_0007.TextGrid'
 #grid = textgrids.TextGrid(dateiname)
 
+
 extrahiereFragement('./NA03_SR_1_0007.wav','./audioFragment.wav', 1.2, 3.6)
 
 
