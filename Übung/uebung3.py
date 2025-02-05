@@ -2,19 +2,22 @@ import random
 
 # Übung 1.1 
 
+def haefigkeit_zaehlen(liste, suchen):
+    counter = 0 
+    for element in liste:
+        if element == "a":
+            counter += 1
+
+    return counter
 
 
 # Übung 1.2
-def vorkommen_in_liste(zahl, liste):
-    
+
+def vorkommen_in_liste(zeichenanzahl, liste):
     ergebnis = []
-    
-    for i in range(0, len(liste)):
-        
-        if len(liste[i]) == zahl:
-        
-            ergebnis.append(i)
-    
+    for element in range(0, len(liste)):  #range() element is not the actual element but the indice
+        if len(liste[element]) == zeichenanzahl:
+            ergebnis.append(element)
     return ergebnis
 
 # [i for i in range(0, len(liste)) if len(liste[1]) == 4]
@@ -27,7 +30,6 @@ def wuerfeln(n):
     random.randint(1, n)
 
 def ratespiel(n, max):
-    erraten = False
     raten_zahl = wuerfeln(n)
     counter = 1
 
