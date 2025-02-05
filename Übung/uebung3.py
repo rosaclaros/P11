@@ -48,6 +48,8 @@ def ratespiel(n, max):
 
 meine_to_dos = ["lernen", "aufraeumen", "kochen", "lernen", "aufraeumen" ]
 
+
+
 def entfernung(liste):
     
     neue_liste = []
@@ -58,8 +60,7 @@ def entfernung(liste):
     
     return neue_liste
 
-# alternativ set(liste)
-
+# meine = set(meine_to_dos)
 
 # Übung 2.1
 
@@ -71,10 +72,38 @@ urlaubsreif = {
 
 urlaubsreif["Sonnencreme"]
 
-a = len(urlaubsreif)
+a = len(urlaubsreif)\
+
+aussaatplan = {
+ "Frühling" : ["Rote Beete", "Brokkoli", "Erbsen"],
+ "Sommer" : ["Radieschen", "Gelbe Rüben", "Tomaten", "Gurken"],
+ "Herbst" : ["Zwiebeln", "Kohlrabi", "Blaubeeren"],
+ "Winter" : ["Kresse", "Spinat", "Feldsalat"]
+ }
+
+aussaatplan.keys()
 
 
+#Überprüfe, ob "Sonnencreme" auf der Packliste steht
+urlaubsreif["Sonnencreme"]
 
+#Du packst den Perso ein. Ändere das Dictionary dementsprechend ab!
+urlaubsreif["Person"] = ["Ja"]
+#Schreibe "Sonnenbrille" auf die Packliste. Der dazugehörige Value ist "ja".
+
+urlaubsreif["Sonnenbrille"] = ["Ja"]
+
+#Anstelle der Wanderschuhe möchtest Du doch lieber Flipflops einpacken. Schreibe die Packliste entsprechend um!
+
+urlaubsreif["Flipflops"] = urlaubsreif["Wanderschuhe"]
+
+#Wie viele Gegenstände stehen auf deiner Liste?
+
+len(urlaubsreif.keys())
+
+#Überprüfe, ob es außer ja und nein noch andere Values gibt
+
+urlaubsreif.items()
 
 
 

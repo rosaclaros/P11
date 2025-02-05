@@ -44,3 +44,7 @@ print(ergebnis)
 woerter = re.split(r"\s+", text)
 print(woerter)
 
+text = "astfreie flussschiffe fahren im schritttempo"
+ergebnisse = re.findall(r"[stf]{3}", text)
+for fundstelle in ergebnisse:
+    print(fundstelle)                

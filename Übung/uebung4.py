@@ -4,9 +4,6 @@ import os.path
 
 #Übung 1: Urlaubsfieber
 
-
-
-
 #Welche Daten liegen in diesem Ordner? Bestimme, ob es sich dabei um Files oder Ordner handelt.
 
 def file_or_folder():

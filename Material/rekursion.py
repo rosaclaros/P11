@@ -22,14 +22,6 @@ def enthält(position, liste, gesucht):
     else:
         return enthält(position + 1, liste, gesucht)
 
-def woist(position, liste, gesucht):
-    if position >= len(liste):
-        return -1
-    elif liste[position] == gesucht:
-        return position
-    else:
-        return woist(position + 1, liste, gesucht)
-
 def suchen(liste, gesucht):
     if len(liste) == 0:
         return False
