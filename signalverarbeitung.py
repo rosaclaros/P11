@@ -30,8 +30,16 @@ def extrahiereFragment (quelldatei, zieldatei, von, bis):
             fragmentdatei.writeframes(fragmentframes)
 
 # sucht auf der Ebene tiername nach einem Segment mit einem bestimmten Label
+def sucheSegmenteNachLabel(tier, label):
+    return [segment for segment in tier if segment.text == label] 
+
+# segment vs segment
+
 def sucheSegmentNachLabel(tier, label):
-    return [segment for segment in tier if segment.text == label]
+    for segment in tier:
+        if segment.text == label:
+            return segment
+    return None
 
 # segementliste = sucheSegmentNachLabel('ORT-MAU', grid,'Bundeskanzler')
     
@@ -40,18 +48,9 @@ def sucheSegmentNachLabel(tier, label):
 def sucheSegmenteImZeitraum (tier, von, bis):
     return [segment for segment in tier if (segment.xmin >= von and segment.xmax <= bis)]
 
-#sucht auf der Ebene tiername nach einer Folge von Labeln
 
-def sucheSegementNachLabelfolge(tier, folge):
-    if len(tier) == 0:
-        return None
-    elif len(folge) == 0:
-        return []
-    elif tier[0] == folge[0]:
-        return [tier[0]].append(sucheSegementNachLabelfolge(tier[1:], folge[1:]))
-    else:
-        return sucheSegementNachLabelfolge(tier[1:], folge)
-            
+        
+
 
 # TextGrid einlesen
 dateiname = './NA03_SR_1_0007.TextGrid'
